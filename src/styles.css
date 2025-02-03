@@ -1,0 +1,56 @@
+/* Custom Styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    padding: 20px;
+  }
+  
+  .card {
+    height: 100%;
+  }
+  
+  .btn {
+    margin-top: 10px;
+  }
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  /* Hover effects */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0b5ed7;
+}
+  
+  .dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .dark-mode .navbar {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  /* Smooth transitions for dark mode */
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.navbar, .card, .btn-outline-secondary {
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  }
