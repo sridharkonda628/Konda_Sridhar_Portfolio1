@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Konda_Sridhar_Portfolio1/static/css/main.bc28fc75.css",
-    "main.js": "/Konda_Sridhar_Portfolio1/static/js/main.27e83acf.js",
+    "main.js": "/Konda_Sridhar_Portfolio1/static/js/main.fa2d417f.js",
     "index.html": "/Konda_Sridhar_Portfolio1/index.html",
     "main.bc28fc75.css.map": "/Konda_Sridhar_Portfolio1/static/css/main.bc28fc75.css.map",
-    "main.27e83acf.js.map": "/Konda_Sridhar_Portfolio1/static/js/main.27e83acf.js.map"
+    "main.fa2d417f.js.map": "/Konda_Sridhar_Portfolio1/static/js/main.fa2d417f.js.map"
   },
   "entrypoints": [
     "static/css/main.bc28fc75.css",
-    "static/js/main.27e83acf.js"
+    "static/js/main.fa2d417f.js"
   ]
 }
