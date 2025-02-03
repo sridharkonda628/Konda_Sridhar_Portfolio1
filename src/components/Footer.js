@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <p>Connect with me:</p>
         <div className="d-flex justify-content-center gap-3">
-          <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/sridharkonda628" target="_blank" rel="noopener noreferrer">
             <FaGithub size={30} />
           </a>
           <a href="www.linkedin.com/in/konda-sridhar-685971276" target="_blank" rel="noopener noreferrer">
