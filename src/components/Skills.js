@@ -1,41 +1,15 @@
-// // src/components/Skills.js
-// import React from 'react';
-
-// const Skills = () => {
-//   const skills = ["HTML", "CSS", "JavaScript", "React", "Java", "Python", "SQL", "Problem Solving"];
-
-//   return (
-//     <section className="container mt-5">
-//       <h2>Skills</h2>
-//       <div className="row">
-//         {skills.map((skill, index) => (
-//           <div key={index} className="col-md-3 col-sm-6 mb-3">
-//             <div className="card">
-//               <div className="card-body">
-//                 <h5 className="card-title">{skill}</h5>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Skills;
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skills = [
-    { name: "HTML", level: 90 },
-    { name: "CSS", level: 85 },
-    { name: "JavaScript", level: 80 },
-    { name: "React", level: 75 },
-    { name: "Java", level: 70 },
-    { name: "Python", level: 65 },
-    { name: "SQL", level: 60 },
+    { name: "HTML", level: 90, description: "Proficient in building structured and semantic web pages." },
+    { name: "CSS", level: 85, description: "Skilled in styling and creating responsive designs." },
+    { name: "JavaScript", level: 80, description: "Experienced in building interactive and dynamic web applications." },
+    { name: "React", level: 75, description: "Proficient in building modern, component-based UIs." },
+    { name: "Java", level: 70, description: "Experienced in object-oriented programming and backend development." },
+    { name: "Python", level: 65, description: "Skilled in scripting, data analysis, and automation." },
+    { name: "SQL", level: 60, description: "Proficient in database design and querying." },
   ];
 
   return (
@@ -48,8 +22,8 @@ const Skills = () => {
     >
       <h2>Skills</h2>
       {skills.map((skill, index) => (
-        <div key={index} className="mb-3">
-          <p>{skill.name}</p>
+        <div key={index} className="mb-4">
+          <h5>{skill.name}</h5>
           <div className="progress">
             <motion.div
               className="progress-bar"
@@ -60,6 +34,7 @@ const Skills = () => {
               {skill.level}%
             </motion.div>
           </div>
+          <p className="mt-2">{skill.description}</p>
         </div>
       ))}
     </motion.section>

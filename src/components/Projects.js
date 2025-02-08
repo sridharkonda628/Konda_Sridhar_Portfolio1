@@ -1,120 +1,55 @@
-// src/components/Projects.js
-
-
-// import React, { lazy, Suspense } from 'react';
-
-// const Projects = lazy(() => import('./components/Projects'));
-
-// const App = () => {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <Suspense fallback={<div>Loading...</div>}>
-//         <Routes>
-//           <Route path="/projects" element={<Projects />} />
-//         </Routes>
-//       </Suspense>
-//     </Router>
-//   );
-// };
-// import React from 'react';
-// const Projects = () => {
-//   const projects = [
-//     {
-//       title: "Login Form",
-//       description: "A secure login form with validation.",
-//       link: "#",
-//     },
-//     {
-//       title: "Appointment Booking Form",
-//       description: "A form for booking appointments with real-time availability.",
-//       link: "#",
-//     },
-//     {
-//       title: "Real Estate Website",
-//       description: "A website for browsing and booking real estate properties.",
-//       link: "#",
-//     },
-//   ];
-
-//   return (
-//     <section className="container mt-5">
-//       <h2>Projects</h2>
-//       <div className="row">
-//         {projects.map((project, index) => (
-//           <div key={index} className="col-md-4 mb-4">
-//             <div className="card">
-//               <div className="card-body">
-//                 <h3>{project.title}</h3>
-//                 <p>{project.description}</p>
-//                 <a href={project.link} className="btn btn-primary">View Project</a>
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Projects;
-import React, { useState } from 'react';
-import { useSpring, animated } from '@react-spring/web';
-
-const ProjectCard = ({ title, description, link }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const hoverAnimation = useSpring({
-    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
-    boxShadow: isHovered ? '0 10px 20px rgba(0, 0, 0, 0.2)' : '0 5px 10px rgba(0, 0, 0, 0.1)',
-  });
-
-  return (
-    <animated.div
-      style={hoverAnimation}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="col-md-4 mb-4"
-    >
-      <div className="card">
-        <div className="card-body">
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <a href={link} className="btn btn-primary">View Project</a>
-        </div>
-      </div>
-    </animated.div>
-  );
-};
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const Projects = () => {
   const projects = [
     {
       title: "Login Form",
-      description: "A secure login form with validation.",
+      description: "A secure login form with validation, built using React and Firebase.",
       link: "#",
+      image: "https://via.https://www.bing.com/images/search?view=detailV2&ccid=PV3MwMH%2f&id=24B64909A7701373A0D954636A95C894FB4D738E&thid=OIP.PV3MwMH_fzrBvLAkxextCwHaFb&mediaurl=https%3a%2f%2fcolorlib.com%2fwp%2fwp-content%2fuploads%2fsites%2f2%2fLogin_v11.jpg&exph=939&expw=1280&q=login+form&simid=608036871833261379&FORM=IRPRST&ck=04E5C20F230C42E0A4E390DA79553CCF&selectedIndex=4&itb=0.com/300", // Replace with your project image
     },
     {
       title: "Appointment Booking Form",
-      description: "A form for booking appointments with real-time availability.",
+      description: "A form for booking appointments with real-time availability, built using React and Node.js.",
       link: "#",
+      image: "https://via.placeholder.com/300", // Replace with your project image
     },
     {
       title: "Real Estate Website",
-      description: "A website for browsing and booking real estate properties.",
+      description: "A website for browsing and booking real estate properties, built using React and MongoDB.",
       link: "#",
+      image: "https://via.placeholder.com/300", // Replace with your project image
     },
   ];
 
   return (
-    <section className="container mt-5">
+    <motion.section
+      id="projects"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="container mt-5"
+    >
       <h2>Projects</h2>
       <div className="row">
         {projects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <div key={index} className="col-md-4 mb-4">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="card h-100"
+            >
+              <img src={project.image} className="card-img-top" alt={project.title} />
+              <div className="card-body">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <a href={project.link} className="btn btn-primary">View Project</a>
+              </div>
+            </motion.div>
+          </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
